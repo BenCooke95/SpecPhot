@@ -9,7 +9,7 @@ Data files are included for three differnt V-band magnitudes; 8, 11 and 14.
 - aaa_11.csv
 - aaa_14.csv
 
-Plotting script is xxx.py
+Plotting script is [3d_plotting_update.py](3d_plotting_update.py)
 
 To better visualise the data presented in the accompanying paper download the datafiles and run the plotting script.
 

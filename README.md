@@ -4,12 +4,12 @@ Data files and plotting script for the 3D parameter space data from the paper:
 
 **SpecPhot: A Comparison of Spectroscopic and Photometric Exoplanet Follow-Up Methods - Benjamin. F. Cooke & Don Pollacco**
 
-Data files are included for three different V-band magnitudes; 8, 11 and 14 (zipped .csv files).
+Data files are included for three different V-band magnitudes; 8, 11 and 14 (zipped csv files).
 - specphot_8.zip
 - specphot_11.zip
 - specphot_14.zip
 
-Plotting script is [3d_plotting_update.py](3d_plotting_update.py)
+Plotting script is [3d_plotting_update.py](3d_plotting_update.py) (python script).
 
 To better visualise the data presented in the accompanying paper download the data files and run the plotting script. The data is included to recreate and manipulate figures 3, 4, 6 & 7 from the SpecPhot paper for all three simulated magnitudes.
 

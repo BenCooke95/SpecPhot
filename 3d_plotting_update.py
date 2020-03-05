@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 ####USER INPUTS####
-mag = 11 #Choose V-mand magnitude: 8, 11 or 14
-phot = 'NGTS' #Choose photometry instrument: NGTS only
-spec = 'HARPS' #Choose spectroscopy instrument: HARPS or CORALIE
-data = 'SNR' #Choose what data to compare: SNR, TIME or WEIGHT
-display = 'ALL' #Choose how much data to display: ALL, >1, <1, ~1
-phot_plus = 'NO' #Plot parameter space availale to photometry only: YES or NO
-spec_plus = 'NO' #Plot parameter space availale to spectroscopy only: YES or NO
-neither_plus = 'NO' #Plot parameter space not availale to either method: YES or NO
+mag = 11 #Choose V-mand magnitude: 8, 11 or 14 (integer)
+phot = 'NGTS' #Choose photometry instrument: NGTS only (string)
+spec = 'HARPS' #Choose spectroscopy instrument: HARPS or CORALIE (string)
+data = 'SNR' #Choose what data to compare: SNR, TIME or WEIGHT (string)
+display = 'ALL' #Choose how much data to display: ALL, >1, <1, ~1 (string)
+phot_plus = 'NO' #Plot parameter space availale to photometry only: YES or NO (string)
+spec_plus = 'NO' #Plot parameter space availale to spectroscopy only: YES or NO (string)
+neither_plus = 'NO' #Plot parameter space not availale to either method: YES or NO (string)
 ###################
 
 col = data+'_RATIO_'+spec[0]+phot[0] #Define data column based on user inputs
@@ -105,7 +105,7 @@ ax.set_zlim(min(specphot_all['LOG_PER']), max(specphot_all['LOG_PER']))
 if data == 'SNR':
 	fig.colorbar(img, format='%.3g', ticks=[0.0001,0.0002,0.0005,0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.2,0.5,1,2,5,10,20,50,100,200,500,1000,2000,5000,10000], label=r'$\rm SNR_{'+spec+'}/SNR_{'+phot+'}$')
 elif data == 'TIME':
-	fig.colorbar(img, format='%.3g', ticks=[0.0001,0.0002,0.0005,0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.2,0.5,1,2,5,10,20,50,100,200,500,1000,2000,5000,10000], label=r'$\rm Follow-up\ time_{'+spec+'}/Follow-up\ time_{'+phot+'}$')
+	fig.colorbar(img, format='%.3g', ticks=[0.0001,0.0002,0.0005,0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.2,0.5,1,2,5,10,20,50,100,200,500,1000,2000,5000,10000], label=r'$\rm Follow-up\ time_{'+phot+'}/Follow-up\ time_{'+spec+'}$')
 elif data == 'WEIGHT':
 	fig.colorbar(img, format='%.3g', ticks=[0.0001,0.0002,0.0005,0.001,0.002,0.005,0.01,0.02,0.05,0.1,0.2,0.5,1,2,5,10,20,50,100,200,500,1000,2000,5000,10000], label=r'$\rm Weighted\ value$')
 

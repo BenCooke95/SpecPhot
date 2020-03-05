@@ -11,7 +11,7 @@ Data files are included for three different V-band magnitudes; 8, 11 and 14 (zip
 
 Plotting script is [3d_plotting_update.py](3d_plotting_update.py)
 
-To better visualise the data presented in the accompanying paper download and un-zip the datafiles and run the plotting script.
+To better visualise the data presented in the accompanying paper download the data files and run the plotting script.
 
 The script contains the option for 8 user inputs (mag is entered as an integer, all other options are entered as strings):
 1. mag - Choose V-mand magnitude

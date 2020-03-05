@@ -1,8 +1,8 @@
-from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import matplotlib
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 ####USER INPUTS####
 mag = 11 #Choose V-mand magnitude: 8, 11 or 14
@@ -14,7 +14,7 @@ phot_plus = 'NO' #Plot parameter space availale to photometry only: YES or NO
 spec_plus = 'NO' #Plot parameter space availale to spectroscopy only: YES or NO
 neither_plus = 'NO' #Plot parameter space not availale to either method: YES or NO
 ###################
-	
+
 col = data+'_RATIO_'+spec[0]+phot[0] #Define data column based on user inputs
 print('col:', col)
 
@@ -37,9 +37,8 @@ def shiftedColorMap(cmap, start=0, midpoint=0.5, stop=1.0, name='shiftedcmap'): 
     return newcmap
 
 
-#Read in chosen dataset
-if mag == 11:
-	array = pd.read_csv('specphot_alltime_post_ref_40.csv', sep=',')
+#Read in chosen data file
+array = pd.read_csv('specphot_'+str(mag)+'.zip', sep=',')
 specphot_all = pd.DataFrame(array)
 print('All:', len(specphot_all))
 

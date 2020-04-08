@@ -1,9 +1,10 @@
 # SpecPhot
 
-Data files and plotting script for the 3D parameter space data from the paper:
+Simulation codes, data files and plotting scripts for the 3D parameter space data from the paper:
 
 **SpecPhot: A Comparison of Spectroscopic and Photometric Exoplanet Follow-Up Methods - Benjamin. F. Cooke & Don Pollacco**
 
+### Plotting
 Data files are included for three different V-band magnitudes; 8, 11 and 14 (zipped csv files).
 - specphot_8.zip
 - specphot_11.zip
@@ -43,3 +44,16 @@ The script contains the option for 8 user inputs (mag is entered as an integer, 
    - NO
 
 For more details please read the associated paper.
+
+### Simulation codes
+We also include the necessary files required to reproduce the simulation described in this paper. Requires the python modules MRExo (https://shbhuk.github.io/mrexo/) and ephem (https://pypi.org/project/ephem/).
+
+These codes are (in order):
+
+1. [specphot.py](specphot.py) - Reads in noise data for the chosen instruments (in folder noise/) and calculates SNR for each point in a 3D grid of stellar radius, planetary radius and period. User can define V-band magnitude of host and size of grid. Data are written to file.
+2. [night_day.py](night_day.py) - Reads in data from specphot.py and calculates NGTS follow-up time for all grid points for which SNR(NGTS)>=3.0. Data are written to file.
+3. [phase.py](phase.py) & [phase_coralie.py](phase_coralie.py) - Reads in data from specphot.py and calculates spectroscopic follow-up time for all grid points for which SNR(HARPS)>=3.0 or SNR(CORALIE)>=3.0 respectively. Data are written to file.
+4. [combine_time_data.py](combine_time_data.py) - combines the outputs of night_day.py, phase.py & phase_coralie.py. Data are written to file.
+
+The output of combine_time_data.py can then be passed to 3d_plotting_update.py to create the 3D plots.
+To report any bugs or problems with the codes please contact me at b.cooke@warwick.ac.uk.
